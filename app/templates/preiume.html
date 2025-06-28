@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% block title %}IAFS - Calculator{% endblock title %}
+
+{% block content %}
+{% include "header.html" %}
+ <!-- Header Start -->
+        <div class="container-fluid bg-breadcrumb">
+            <div class="container text-center py-5" style="max-width: 900px;">
+                <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Insurance Preiume Calculator via Advanced Ai</h4>
+                <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                    <li class="breadcrumb-item active text-primary">Preiume</li>
+                </ol>    
+            </div>
+        </div>
+        <!-- Header End -->
+
+        <!-- preiume Start -->
+        <div class="container-fluid contact bg-light py-5">
+            <div class="container py-5">
+                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+                    <h4 class="text-primary">Preiume Calculator</h4>
+                    <h1 class="display-4 mb-4">Insurance Preiume Calculation Via Advanced Ai</h1>
+                </div>
+                <div class="row g-5">
+                    <div class="col-xl-6 wow fadeInLeft" data-wow-delay="0.2s">
+                        <div class="contact-img d-flex justify-content-center" >
+                            <div class="contact-img-inner">
+                                <img src="static/img/shit3.png" class="img-fluid w-100"  alt="Image">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 wow fadeInRight" data-wow-delay="0.4s">
+                        <div>
+                            <h4 class="text-primary">Check Your preiume </h4>
+                            
+                            <form method='post'>
+                                {% csrf_token %}
+                                <div class="row g-3">
+                                    <div class="col-lg-12 col-xl-6">
+                                        <div class="form-floating">
+                                            <input type="number" class="form-control border-0" id="name" placeholder="Your Age" name='age'> 
+                                            <label for="name">Your Age</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-xl-6">
+                                        <div class="form-floating">
+                                            <input type="number" class="form-control border-0" id="email" placeholder="Your Bmi" name='bmi'>
+                                             
+                                            <label for="email">Bmi</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-xl-6">
+                                        <div class="form-floating">
+                                            <select name='sex' class="form-select" style='border-radius:none;'>
+                                                    <option value="0">Male</option>
+                                                     <option value="1">Female</option>
+                                            </select>
+                                            <label for="phone">Sex</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 col-xl-6">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control border-0" id="project" placeholder="Childern" name='childern'>
+                                            <label for="project">Your Childerns</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-floating">
+                                             <select name='area' class="form-select" style='border-radius:none;'>
+                                                    <option value="0">SoutEast</option>
+                                                     <option value="1">SouthWest</option>
+                                                     <option value="1">NorthWest</option>
+                                                     <option value="1">NorthEast</option>
+                                            </select>
+                                            <label for="subject">Area</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-floating">
+                                          <select name='smoker' class="form-select" style='border-radius:none;'>
+                                          <option value="1">Yes </option>
+                                          <option value="1">No</option>
+                                          </select>
+                                          <label for="message">Smoker</label>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-12">
+                                        <button class="btn btn-primary w-100 py-3">Calculate</button>
+                                    </div>
+                                 <h2 class='text-center'> Your preiume is {{pre}} </h2>
+
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+
+{% include "footer.html" %}
+
+{% endblock content %}
+

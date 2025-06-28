@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Login - IAFS{% endblock %}
+
+{% block content %}
+{% include "header.html" %}
+
+<div class="container">
+
+  <div class="form-container">
+    <div class="form-title">Login to IAFS</div>
+    <form method='post'>
+        {% csrf_token %}
+      <div class="mb-3">
+        <label class="form-label">Username</label>
+        <input name='username' type="text" class="form-control" placeholder="Enter your email" required />
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input name='password' type="password" class="form-control" placeholder="Enter your password" required />
+      </div>
+      <div class="d-grid">
+        <button type="submit" class="btn btn-primary">Login</button>
+      </div>
+      <div class="link-text">
+        Don't have an account? <a href="{% url 'signup'  %}">Register here</a>
+      </div>
+    </form>
+  </div>
+</div>
+
+  {% include "footer.html" %}
+{% endblock %}
